@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Pensamento } from '../pensamentos';
 import { PensamentoService } from '../pensamento.service';
+import { Pensamento } from '../pensamentos';
 
 @Component({
   selector: 'app-excluir-pensamento',
@@ -21,14 +21,14 @@ export class ExcluirPensamentoComponent {
     private service: PensamentoService,
     private router: Router,
     private route: ActivatedRoute
-    ) { }
+) { }
 
-    NgOnInit(): void {
-      const id = this.route.snapshot.paramMap.get('id')
-      this.service.buscarPorId(parseInt(id!)).subscribe((pensamento) => {
-        this.pensamento = pensamento
-      })
-    }
+ngOnInit(): void {
+  const id = this.route.snapshot.paramMap.get('id')
+  this.service.buscarPorId(parseInt(id!)).subscribe((pensamento) => {
+      this.pensamento = pensamento
+  })
+}
 
     excluirPensamento() {
       if(this.pensamento.id) {
