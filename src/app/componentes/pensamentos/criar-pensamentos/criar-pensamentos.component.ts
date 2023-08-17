@@ -3,6 +3,7 @@ import { Pensamento } from '../pensamentos';
 import { PensamentoService } from '../pensamento.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { minusculoValidator } from './minusculoValidators';
 
 @Component({
   selector: 'app-criar-pensamentos',
@@ -10,6 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./criar-pensamentos.component.css']
 })
 export class CriarPensamentosComponent {
+
 
   formulario!: FormGroup
 
@@ -30,7 +32,8 @@ export class CriarPensamentosComponent {
       autoria: ['',
         Validators.compose([
           Validators.required,
-          Validators.minLength(3)
+          Validators.minLength(3),
+          minusculoValidator
         ])
       ],
       modelo: ['modelo1']
@@ -49,5 +52,14 @@ export class CriarPensamentosComponent {
   cancelarPensamento(){
     alert("Pensamento cancelado!")
     this.router.navigate(['/listarPensamento'])
+  }
+
+  habilitarBotao(): string {
+    if(this.formulario.valid) {
+      return 'botao'
+    }
+    else {
+      return 'botao__desabilitado'
+    }
   }
 }

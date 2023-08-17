@@ -5,22 +5,25 @@
   <form [formGroup]="formulario">
     <label for="pensamento">Pensamento</label>
     <input
-    type="textarea"
-    class="input"
-    id="pensamento"
-    formControlName="conteudo"
-    placeholder="Digite o pensamento"
+      type="textarea"
+      class="input"
+      id="pensamento"
+      formControlName="conteudo"
+      placeholder="Digite o pensamento"
     >
-    <div class="mensagem__erro" *ngIf="formulario.get('conteudo')?.errors">
+    <div
+      class="mensagem__erro"
+      *ngIf="formulario.get('conteudo')?.errors?.['required'] && formulario.get('conteudo')?.touched"
+    >
       Pensamento é obrigatório!
     </div>
     <label for="autoria">Autoria</label>
     <input
-    type="text"
-    class="input"
-    id="autoria"
-    formControlName="autoria"
-    placeholder="Digite a autoria ou fonte"
+      type="text"
+      class="input"
+      id="autoria"
+      formControlName="autoria"
+      placeholder="Digite a autoria ou fonte"
     >
     <div class="mensagem__erro"
       *ngIf="formulario.get('autoria')?.errors?.['required'] && formulario.get('autoria')?.touched"
@@ -29,7 +32,7 @@
     </div>
     <div
       class="mensagem__erro"
-      *ngIf="formulario.get('autoria')?.errors?.['minlenght'] && formulario.get('conteudo')?.touched"
+      *ngIf="formulario.get('autoria')?.errors?.['minlength'] && formulario.get('conteudo')?.touched"
     >
       Autoria precisa ter no mínimo 3 caracteres!
     </div>
@@ -98,7 +101,9 @@
     </div>
     <div class="acoes">
       <button
+        [disabled]="!formulario.valid"
         (click)="criarPensamento()"
+        [ngClass]="habilitarBotao()"
         class="botao"
       >
         Salvar
