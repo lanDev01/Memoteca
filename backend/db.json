@@ -4,7 +4,7 @@
       "conteudo": "Ufaa corrigi o erro",
       "autoria": "Alan",
       "modelo": "modelo3",
-      "favorito": false,
+      "favorito": true,
       "id": 9
     },
     {
@@ -18,7 +18,7 @@
       "conteudo": "Esta bem melhor",
       "autoria": "Dev Anderson",
       "modelo": "modelo3",
-      "favorito": false,
+      "favorito": true,
       "id": 11
     },
     {
