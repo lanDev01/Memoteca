@@ -1,7 +1,5 @@
 #section-list-thoughts {
-  height: calc(100dvh - 72px - 72px);
-  background: #183140;
-
+  min-height: calc(100dvh - 72px - 72px);
   /* border: 2px solid red; */
 
   width: 100%;
@@ -9,23 +7,6 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-}
-
-#section-list-thoughts::-webkit-scrollbar {
-  padding-right: 4px;
-  width: 20px;
-  height: 40px;
-  background: transparent;
-}
-
-#section-list-thoughts::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-#section-list-thoughts::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  background: #262724;
-  border: 6px solid #e8eddf;
 }
 
 .container {

@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ExcluirPensamentoComponent } from './componentes/pensamentos/excluir-pensamento/excluir-pensamento.component';
 import { EditarPensamentosComponent } from './componentes/pensamentos/editar-pensamentos/editar-pensamentos.component';
 import { BotaoCarregarMaisComponent } from './componentes/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component';
+import { LucideAngularModule, Heart, SquarePen, Trash2 } from 'lucide-angular';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BotaoCarregarMaisComponent } from './componentes/pensamentos/listar-pen
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LucideAngularModule.pick({ Heart, SquarePen, Trash2 })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,6 +18,27 @@
   --gold-200: #E7BD75,
 }
 
+body {
+  background: #183140;
+}
+
+body::-webkit-scrollbar {
+  padding-right: 4px;
+  width: 20px;
+  height: 40px;
+  background: transparent;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #D9AE79;
+  border: 6px solid #183140;
+}
+
 .botao {
   background: #154580;
   color: #ffffff;

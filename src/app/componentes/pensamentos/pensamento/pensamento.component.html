@@ -1,16 +1,65 @@
-<div class="pensamento {{ pensamento.modelo }} ff-roboto-mono" [ngClass]="larguraPensamento()">
-  <img src="../../../../assets/Imagens/{{ pensamento.modelo }}.png" alt="aspas coloridas">
-  <p class="conteudo">{{ pensamento.conteudo }}</p>
-  <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
-  <div class="acoes">
-    <button class="botao-favorito" (click)="atualizarFavoritos()">
-      <img src="../../../../assets/Imagens/icone-favorito-{{ mudarIconeFavorito() }}.png" alt="Icone favorito {{ mudarIconeFavorito() }}">
+<div class="box-thoughts">
+  <header>
+    <div class="box-img">
+      <img
+        src="../../../../assets/Imagens/{{ pensamento.modelo }}.png"
+        class="{{ pensamento.modelo }}"
+        alt="aspas coloridas"
+      />
+    </div>
+
+    <h3 class="autoria">
+      <b>{{ pensamento.autoria }}</b>
+    </h3>
+
+  </header>
+
+  <div class="box-content">
+    <p class="content">{{ pensamento.conteudo }}</p>
+  </div>
+
+  <div class="actions">
+    <button
+      class="button-actions"
+      (click)="atualizarFavoritos()"
+      title="Favoritar"
+    >
+      <lucide-angular
+        name="heart"
+        [size]="32"
+        class="heart-ativo-icon"
+        *ngIf="mudarIconeFavorito() == 'ativo'"
+      ></lucide-angular>
+      <lucide-angular
+        name="heart"
+        [size]="32"
+        class="heart-inativo-icon"
+        *ngIf="mudarIconeFavorito() == 'inativo'"
+      ></lucide-angular>
     </button>
-    <button class="botao-editar">
-      <img src="../../../../assets/Imagens/icone-editar.png" routerLink="/pensamentos/editarPensamento/{{ pensamento.id }}" alt="Ícone de editar">
+
+    <button
+      class="button-actions"
+      routerLink="/pensamentos/editarPensamento/{{ pensamento.id }}"
+      title="Editar"
+    >
+      <lucide-angular
+        name="square-pen"
+        [size]="32"
+        class="square-pen"
+      ></lucide-angular>
     </button>
-    <button class="botao-excluir" routerLink="/pensamentos/excluirPensamento/{{pensamento.id}}">
-      <img src="../../../../assets/Imagens/icone-excluir.png" alt="Ícone de excluir">
+
+    <button
+      class="button-actions"
+      routerLink="/pensamentos/excluirPensamento/{{ pensamento.id }}"
+      title="Excluir"
+    >
+      <lucide-angular
+        name="trash-2"
+        [size]="32"
+        class="trash-2"
+      ></lucide-angular>
     </button>
   </div>
 </div>

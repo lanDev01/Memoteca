@@ -1,25 +1,34 @@
-.acoes {
+.box-thoughts {
+  width: 280px;
+  height: 320px;
+
+  border-radius: 0.625rem;
+  background: #111826;
+  border: 1px solid #1d5a73;
+
   display: flex;
-  justify-content: flex-end
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.botao-editar,
-.botao-excluir,
-.botao-favorito {
-  border: none;
-  cursor: pointer;
-  margin-right: 5px;
-  margin-top: 15px;
-}
-
-.pensamento {
-  background-color: #F8F9FE;
+.box-thoughts > header {
+  display: flex;
+  align-items: center;
+  gap: 0.225rem;
   padding: 1rem;
-  box-sizing: border-box;
 }
 
-.pensamento .conteudo {
-  margin: 1rem auto;
+header > .box-img {
+  width: 42px;
+}
+
+.box-img > img {
+  width: 36px;
+}
+
+.autoria {
+  color: #d9ae79;
+  font-size: 1.5rem;
   word-wrap: break-word;
 }
 
@@ -27,33 +36,40 @@
   word-wrap: break-word;
 }
 
-.modelo1 {
-  box-shadow: 8px 8px 0px #154580;
+.box-content {
+  padding: 1rem;
+  height: 50%;
 }
 
-.modelo2 {
-  box-shadow: 8px 8px 0px #6BD1FF;
+.content {
+  font-size: 1rem;
+  color: #d9ae79;
+  opacity: 0.8;
 }
 
-.modelo3 {
-  box-shadow: 8px 8px 0px #84EEC1;
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+
+  padding: 1rem;
 }
 
-.pensamento-g {
-  width: 556px;
+.button-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.pensamento-p {
-  width: 262px;
+.heart-ativo-icon {
+  color: #e52e4d;
 }
-
-@media screen and (max-width: 768px) {
-  .pensamento-g {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 426px) {
-  .pensamento-p {
-    width: 100%;
-  }
+.heart-inativo-icon,
+.square-pen,
+.trash-2 {
+  color: #1d5a73;
 }
