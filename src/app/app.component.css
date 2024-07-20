@@ -1,6 +1,0 @@
-main {
-    background: url(../assets/Imagens/background-completo.png);
-    background-size: cover;
-    height: calc(100dvh - 72px - 72px);
-    overflow-y: scroll;
-}

@@ -3,9 +3,9 @@
     <img src="../../../assets/Imagens/logo.jpg" alt="logo Momoteca" />
 
     <ul>
-      <li>Mural</li>
-      <li>Favoritos</li>
-      <li>Novo Pensamentos</li>
+      <li (click)="recarregarComponente()">Mural</li>
+      <li (click)="listarFavoritos()">Favoritos</li>
+      <li routerLink="/criarPensamento">Novo Pensamentos</li>
     </ul>
   </div>
 </header>
